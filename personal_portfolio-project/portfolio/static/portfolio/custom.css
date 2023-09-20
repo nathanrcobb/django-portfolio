@@ -17,6 +17,28 @@
   --custom-font-red-hat-display: "Red Hat Display", sans-serif;
 }
 
+body {
+  /* Sizes */
+  h1 {
+    font-size: calc(1.375rem + 1.5vw);
+  }
+  h2 {
+    font-size: calc(1.325rem + 0.9vw);
+  }
+  h3 {
+    font-size: calc(1.3rem + 0.6vw);
+  }
+  h4 {
+    font-size: calc(1.275rem + 0.3vw);
+  }
+  h5 {
+    font-size: 1.25rem;
+  }
+  h6 {
+    font-size: 1rem;
+  }
+}
+
 /* Alternate background colors */
 .bg-light-alt {
   background-color: #d7d8d9; /* Legacy fallback */
@@ -39,116 +61,69 @@
 /* Navbar */
 /* Main styling */
 .navbar.sticky-top {
-  padding-top: 0;
-  padding-bottom: 0;
-  background: linear-gradient(#f8f9fa, #0000);
+  background: linear-gradient(#f8f9fa, #f8f9faa7);
 }
 
 /* Right nav item styling */
 #navbarNav {
   > .navbar-nav {
-    width: 100%;
-    padding-top: 0.5rem;
     justify-content: space-between;
-  }
-
-  @media (min-width: 768px) {
-    > .navbar-nav {
+    @media (min-width: 768px) {
       justify-content: end;
     }
   }
 }
 
 /* Link hover effect */
-.nav-item {
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
-
-  /* @media (min-width: 768px) {
-    :hover {
+/* .nav-item {
+  @media (min-width: 768px) {
+    .nav-link:hover {
       border-radius: 10%;
       background: linear-gradient(#a0ce4e, #9fce4e1f);
     }
-  } */
-}
+  }
+} */
 
 /* Portfolio sections */
 /* Headline */
-.portfolio-headline {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-}
+/* .portfolio-headline {
+} */
 
 /* Greeting */
 .portfolio-greeting {
   /* Greeting transition */
   > .greeting {
-    margin-top: 2.5rem;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
     background: linear-gradient(#0000, #a0ce4e);
-
-    > p {
-      margin-top: 2rem;
-      margin-bottom: -1rem;
-      text-align: center;
-      font-family: sans-serif; /* Legacy fallback */
-      font-family: var(--custom-font-mooli);
-      font-size: x-large;
+    text-align: center;
+    > h4 {
       font-weight: 600;
     }
   }
 
   /* Greeting body */
-  .container > p {
-    margin-top: 0;
-    padding-top: 0;
-    margin-bottom: 0;
-    padding-bottom: 4rem;
-    background-color: #a0ce4e; /* Legacy fallback */
-    --bs-bg-opacity: 1;
-    background-color: rgba(
-      var(--custom-light-green-rgb),
-      var(--bs-bg-opacity)
-    ) !important;
-    text-align: center;
-    font-family: sans-serif; /* Legacy fallback */
-    font-family: var(--custom-font-mooli);
-    font-size: large;
-    font-weight: 600;
+  .container > h5 {
+    line-height: 1.4;
+    font-weight: 500;
   }
 }
 
 /* Skills */
 .portfolio-skills {
-  margin-top: 0;
-  margin-bottom: 2.5rem;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
   background: linear-gradient(#a0ce4e, #0000);
 
   > .container {
-    height: 10rem;
-    border-radius: 2%;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    height: 20rem;
+    border-radius: 1rem;
   }
 }
 
 /* Projects */
-.portfolio-projects {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-}
+/* .portfolio-projects {
+} */
 
-/* Headline Avatar */
-.border-custom.rounded-circle {
+/* Borders */
+/* Light green */
+.border-light-green {
   --bs-border-opacity: 1;
   border-color: rgba(
     var(--custom-light-green-rgb),
@@ -229,8 +204,4 @@ h1, /* Default for h1 tags */
   font-family: sans-serif; /* Legacy fallback */
   font-family: var(--custom-font-red-hat-display);
   font-weight: 700;
-}
-
-h1 {
-  font-size: calc(2rem / sqrt(1));
 }

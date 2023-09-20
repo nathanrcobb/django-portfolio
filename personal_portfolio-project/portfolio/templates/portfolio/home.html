@@ -8,18 +8,17 @@
 
 {% block content %}
 <!-- Headline section -->
-<div class="portfolio-headline">
+<div class="portfolio-headline py-5 my-5">
   <div class="container">
     <div class="section-headline d-flex flex-col justify-content-center align-items-end">
       <div class="text-center">
         <h1>Building software is my <b class="text-red font-mooli">passion</b>.</h1>
-        <h5><b class="text-royal-blue font-mooli">Empathy</b> and <b class="text-brown font-mooli">authenticity</b> are
-          my
-          core values.
-        </h5>
+        <h3><b class="text-royal-blue font-mooli">Empathy</b> and <b class="text-brown font-mooli">authenticity</b> are
+          my core values.
+        </h3>
         <br>
-        <img class="border border-5 border-custom rounded-circle" src="{% static 'portfolio/avatar.jpg' %}" alt=""
-          width="300" height="300">
+        <img class="border border-5 border-light-green rounded-circle shadow-lg"
+          src="{% static 'portfolio/avatar.jpg' %}" alt="" width="300" height="300">
       </div>
     </div>
   </div>
@@ -27,33 +26,33 @@
 
 <!-- Greeting section -->
 <div class="portfolio-greeting">
-  <div class="greeting">
-    <p>
+  <div class="greeting text-center pt-5 pb-4">
+    <h4 class="font-mooli">
       Hello, I'm Nathan. It's nice to meet you.
-    </p>
+    </h4>
   </div>
   <div class="bg-light-green">
     <div class="container">
-      <p>
+      <h5 class="bg-light-green text-center my-0 pt-0 pb-5">
         I've spent the past 10 years working with both legacy and modern technologies,
         from COBOL compiler optimization to client-side tracking in React. I thrive in
         fast-paced environments where collaboration is key, but I'm autonomous enough to
-        push development towards a deadline even under immense pressure. I know that what
+        push forward and meet deadlines, even under immense pressure. I know that what
         makes a great engineer is a hunger for challenging oneself and motivation to keep
         learning in an ever-changing landscape. I pride myself on my positive attitude,
         humility, and respect for others.
-      </p>
+      </h5>
     </div>
   </div>
 </div>
 
 <!-- Skills section -->
-<div class="portfolio-skills">
-  <div class="container d-flex flex-row bg-light">
-    <div class="container text-center">
+<div class="portfolio-skills mt-0 mb-5 pt-3 pb-4">
+  <div class="container d-flex flex-row bg-light shadow-lg p-4">
+    <div class="container text-center border-right">
       <h4>Hello</h4>
     </div>
-    <div class="container text-center">
+    <div class="container text-center border-right">
       <h4>Hello</h4>
     </div>
     <div class="container text-center">
@@ -64,7 +63,7 @@
 
 
 <!-- Projects section -->
-<div class="portfolio-projects bg-light-alt">
+<div class="portfolio-projects bg-light-alt py-5 my-5">
   <div class="container">
     <h2 class="font-red-hat-display-semibold">My Projects</h2>
     <br>

@@ -33,8 +33,8 @@
 
 <body class="bg-light">
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-md sticky-top">
-    <div class="container">
+  <nav class="navbar navbar-expand-md sticky-top py-0">
+    <div class="container pt-2">
       <!-- Header logo -->
       <a class="navbar-brand" href="{% url 'home' %}">
         <img src="{% static 'portfolio/header_logo.png' %}" width="204" height="40" alt="Header Logo">
@@ -48,14 +48,14 @@
 
       <!-- Right nav items -->
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav d-flex flex-row px-5">
-          <li class="nav-item">
+        <ul class="navbar-nav w-100 d-flex flex-row px-5">
+          <li class="nav-item px-1">
             <a class="nav-link" href="{% static 'portfolio/public_resume.pdf' %}">Resume</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item px-1">
             <a class="nav-link" href='https://www.linkedin.com/in/nathanrcobb/' target="_blank">LinkedIn</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item px-1">
             <a class="nav-link {% block nav_blogs %}{% endblock %}" href="{% url 'blog:all' %}">Blogs</a>
           </li>
         </ul>
