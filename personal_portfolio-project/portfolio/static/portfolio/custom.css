@@ -1,0 +1,236 @@
+/* CSS Variables */
+:root {
+  --custom-light: #d7d8d9;
+  --custom-light-rgb: 234, 235, 236;
+  --custom-light-green: #a0ce4e;
+  --custom-light-green-rgb: 160, 206, 78;
+  --custom-red: #cf2e2e;
+  --custom-red-rgb: 207, 46, 46;
+  --custom-royal-blue: #4169e1;
+  --custom-royal-blue-rgb: 65, 105, 225;
+  --custom-brown: #633200;
+  --custom-brown-rgb: 99, 50, 0;
+
+  --custom-font-dosis: "Dosis", sans-serif;
+  --custom-font-mooli: "Mooli", sans-serif;
+  --custom-font-playfair-display: "Playfair Display", serif;
+  --custom-font-red-hat-display: "Red Hat Display", sans-serif;
+}
+
+/* Alternate background colors */
+.bg-light-alt {
+  background-color: #d7d8d9; /* Legacy fallback */
+  --bs-bg-opacity: 1;
+  background-color: rgba(
+    var(--custom-light-rgb),
+    var(--bs-bg-opacity)
+  ) !important;
+}
+
+.bg-light-green {
+  background-color: #a0ce4e; /* Legacy fallback */
+  --bs-bg-opacity: 1;
+  background-color: rgba(
+    var(--custom-light-green-rgb),
+    var(--bs-bg-opacity)
+  ) !important;
+}
+
+/* Navbar */
+/* Main styling */
+.navbar.sticky-top {
+  padding-top: 0;
+  padding-bottom: 0;
+  background: linear-gradient(#f8f9fa, #0000);
+}
+
+/* Right nav item styling */
+#navbarNav {
+  > .navbar-nav {
+    width: 100%;
+    padding-top: 0.5rem;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 768px) {
+    > .navbar-nav {
+      justify-content: end;
+    }
+  }
+}
+
+/* Link hover effect */
+.nav-item {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+
+  /* @media (min-width: 768px) {
+    :hover {
+      border-radius: 10%;
+      background: linear-gradient(#a0ce4e, #9fce4e1f);
+    }
+  } */
+}
+
+/* Portfolio sections */
+/* Headline */
+.portfolio-headline {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+/* Greeting */
+.portfolio-greeting {
+  /* Greeting transition */
+  > .greeting {
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    background: linear-gradient(#0000, #a0ce4e);
+
+    > p {
+      margin-top: 2rem;
+      margin-bottom: -1rem;
+      text-align: center;
+      font-family: sans-serif; /* Legacy fallback */
+      font-family: var(--custom-font-mooli);
+      font-size: x-large;
+      font-weight: 600;
+    }
+  }
+
+  /* Greeting body */
+  .container > p {
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 4rem;
+    background-color: #a0ce4e; /* Legacy fallback */
+    --bs-bg-opacity: 1;
+    background-color: rgba(
+      var(--custom-light-green-rgb),
+      var(--bs-bg-opacity)
+    ) !important;
+    text-align: center;
+    font-family: sans-serif; /* Legacy fallback */
+    font-family: var(--custom-font-mooli);
+    font-size: large;
+    font-weight: 600;
+  }
+}
+
+/* Skills */
+.portfolio-skills {
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  background: linear-gradient(#a0ce4e, #0000);
+
+  > .container {
+    height: 10rem;
+    border-radius: 2%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+/* Projects */
+.portfolio-projects {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+/* Headline Avatar */
+.border-custom.rounded-circle {
+  --bs-border-opacity: 1;
+  border-color: rgba(
+    var(--custom-light-green-rgb),
+    var(--bs-border-opacity)
+  ) !important;
+}
+
+/* Text Colors */
+/* Text Color - Light Green */
+.text-light-green {
+  color: #a0ce4e; /* Legacy fallback */
+  color: var(--custom-light-green);
+}
+
+/* Text Color - Brown */
+.text-brown {
+  color: #633200; /* Legacy fallback */
+  color: var(--custom-brown);
+}
+
+/* Text Color - Red */
+.text-red {
+  color: #cf2e2e; /* Legacy fallback */
+  color: var(--custom-red);
+}
+
+/* Text Color - Royal Blue */
+.text-royal-blue {
+  color: #4169e1; /* Legacy fallback */
+  color: var(--custom-royal-blue);
+}
+
+/* Fonts */
+/* Font - Dosis */
+.font-dosis {
+  font-family: sans-serif; /* Legacy fallback */
+  font-family: var(--custom-font-dosis);
+  font-weight: 600;
+}
+
+/* Font - Mooli */
+.font-mooli {
+  font-family: sans-serif; /* Legacy fallback */
+  font-family: var(--custom-font-mooli);
+}
+
+/* Font - Red Hat Display */
+.font-red-hat-display-light {
+  font-family: sans-serif; /* Legacy fallback */
+  font-family: var(--custom-font-red-hat-display);
+  font-weight: 300;
+}
+a, /* Default for a tags */
+p, /* Default for p tags */
+h3, /* Default for h3 tags */
+h4, /* Default for h4 tags */
+h5, /* Default for h5 tags */
+h6, /* Default for h6 tags */
+.font-red-hat-display {
+  font-family: sans-serif; /* Legacy fallback */
+  font-family: var(--custom-font-red-hat-display);
+  font-weight: 400;
+}
+h2, /* Default for h2 tags */
+.font-red-hat-display-medium {
+  font-family: sans-serif; /* Legacy fallback */
+  font-family: var(--custom-font-red-hat-display);
+  font-weight: 500;
+}
+h1, /* Default for h1 tags */
+.font-red-hat-display-semibold {
+  font-family: sans-serif; /* Legacy fallback */
+  font-family: var(--custom-font-red-hat-display);
+  font-weight: 600;
+}
+.nav-link, /* Default for navbar links */
+.font-red-hat-display-bold {
+  font-family: sans-serif; /* Legacy fallback */
+  font-family: var(--custom-font-red-hat-display);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: calc(2rem / sqrt(1));
+}
