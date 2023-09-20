@@ -4,6 +4,8 @@
   --custom-light-rgb: 234, 235, 236;
   --custom-light-green: #a0ce4e;
   --custom-light-green-rgb: 160, 206, 78;
+  --custom-medium-green: #6d9e1a;
+  --custom-medium-green-rgb: 109, 158, 26;
   --custom-red: #cf2e2e;
   --custom-red-rgb: 207, 46, 46;
   --custom-royal-blue: #4169e1;
@@ -11,14 +13,13 @@
   --custom-brown: #633200;
   --custom-brown-rgb: 99, 50, 0;
 
-  --custom-font-dosis: "Dosis", sans-serif;
   --custom-font-mooli: "Mooli", sans-serif;
   --custom-font-playfair-display: "Playfair Display", serif;
   --custom-font-red-hat-display: "Red Hat Display", sans-serif;
 }
 
+/* Font sizes */
 body {
-  /* Sizes */
   h1 {
     font-size: calc(1.375rem + 1.5vw);
   }
@@ -110,16 +111,39 @@ body {
 /* Skills */
 .portfolio-skills {
   background: linear-gradient(#a0ce4e, #0000);
-
   > .container {
     height: 20rem;
+    --bs-gutter-x: 0;
     border-radius: 1rem;
+    > .container {
+      border-bottom: 1px solid #000000;
+
+      > h3 {
+        font-weight: 700;
+      }
+    }
+    > .flex-row {
+      .container {
+        border-right: 1px solid #000000;
+        > h4 {
+          font-weight: 700;
+        }
+        > span {
+          font-size: 2rem;
+        }
+      }
+      .container:last-child {
+        border-right: none;
+      }
+    }
   }
 }
 
 /* Projects */
-/* .portfolio-projects {
-} */
+.portfolio-projects {
+  > container {
+  }
+}
 
 /* Borders */
 /* Light green */
@@ -136,6 +160,12 @@ body {
 .text-light-green {
   color: #a0ce4e; /* Legacy fallback */
   color: var(--custom-light-green);
+}
+
+/* Text Color - Medium Green */
+.text-medium-green {
+  color: #6d9e1a; /* Legacy fallback */
+  color: var(--custom-medium-green);
 }
 
 /* Text Color - Brown */
@@ -157,13 +187,6 @@ body {
 }
 
 /* Fonts */
-/* Font - Dosis */
-.font-dosis {
-  font-family: sans-serif; /* Legacy fallback */
-  font-family: var(--custom-font-dosis);
-  font-weight: 600;
-}
-
 /* Font - Mooli */
 .font-mooli {
   font-family: sans-serif; /* Legacy fallback */
