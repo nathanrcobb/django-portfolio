@@ -1,21 +1,17 @@
 /* CSS Variables */
 :root {
-  --custom-light: #d7d8d9;
-  --custom-light-rgb: 234, 235, 236;
-  --custom-light-green: #a0ce4e;
-  --custom-light-green-rgb: 160, 206, 78;
-  --custom-medium-green: #6d9e1a;
-  --custom-medium-green-rgb: 109, 158, 26;
-  --custom-red: #cf2e2e;
-  --custom-red-rgb: 207, 46, 46;
-  --custom-royal-blue: #4169e1;
-  --custom-royal-blue-rgb: 65, 105, 225;
-  --custom-brown: #633200;
-  --custom-brown-rgb: 99, 50, 0;
+  --custom-lad-blue: #005a9c;
+  --custom-lad-blue-rgb: 0, 90, 156;
+  --custom-lad-red: #ef3e42;
+  --custom-lad-red-rgb: 239, 62, 66;
+  --custom-lad-silver: #a5acaf;
+  --custom-lad-silver-rgb: 191, 192, 191;
 
+  --custom-font-bebas: "Bebas Neue", sans-serif;
+  --custom-font-dosis: "Dosis", sans-serif;
+  --custom-font-josefin: "Josefin Sans", sans-serif;
   --custom-font-mooli: "Mooli", sans-serif;
-  --custom-font-playfair-display: "Playfair Display", serif;
-  --custom-font-red-hat-display: "Red Hat Display", sans-serif;
+  --custom-font-redhat: "Red Hat Display", sans-serif;
 }
 
 /* Font sizes */
@@ -41,20 +37,20 @@ body {
 }
 
 /* Alternate background colors */
-.bg-light-alt {
-  background-color: #d7d8d9; /* Legacy fallback */
+.bg-theme-primary {
+  background-color: #005a9c; /* Legacy fallback */
   --bs-bg-opacity: 1;
   background-color: rgba(
-    var(--custom-light-rgb),
+    var(--custom-lad-blue-rgb),
     var(--bs-bg-opacity)
   ) !important;
 }
 
-.bg-light-green {
-  background-color: #a0ce4e; /* Legacy fallback */
+.bg-theme-light {
+  background-color: #a5acaf; /* Legacy fallback */
   --bs-bg-opacity: 1;
   background-color: rgba(
-    var(--custom-light-green-rgb),
+    var(--custom-lad-silver-rgb),
     var(--bs-bg-opacity)
   ) !important;
 }
@@ -63,6 +59,10 @@ body {
 /* Main styling */
 .navbar.sticky-top {
   background: linear-gradient(#f8f9fa, #f8f9faa7);
+}
+
+.nav-brand-name {
+  padding-left: 0.5rem;
 }
 
 /* Right nav item styling */
@@ -76,14 +76,13 @@ body {
 }
 
 /* Link hover effect */
-/* .nav-item {
-  @media (min-width: 768px) {
-    .nav-link:hover {
-      border-radius: 10%;
-      background: linear-gradient(#a0ce4e, #9fce4e1f);
-    }
+.nav-item {
+  .nav-link:hover {
+    border-radius: 10%;
+    color: #005a9c;
+    color: var(--custom-lad-blue);
   }
-} */
+}
 
 /* Portfolio sections */
 /* Headline */
@@ -94,7 +93,7 @@ body {
 .portfolio-greeting {
   /* Greeting transition */
   > .greeting {
-    background: linear-gradient(#0000, #a0ce4e);
+    background: linear-gradient(#0000, #005a9c);
     text-align: center;
     > h4 {
       font-weight: 600;
@@ -110,24 +109,17 @@ body {
 
 /* Skills */
 .portfolio-skills {
-  background: linear-gradient(#a0ce4e, #0000);
+  background: linear-gradient(#005a9c, #0000);
   > .container {
     height: 20rem;
     --bs-gutter-x: 0;
     border-radius: 1rem;
     > .container {
       border-bottom: 1px solid #000000;
-
-      > h3 {
-        font-weight: 700;
-      }
     }
     > .flex-row {
       .container {
         border-right: 1px solid #000000;
-        > h4 {
-          font-weight: 700;
-        }
         > span {
           font-size: 2rem;
         }
@@ -140,53 +132,90 @@ body {
 }
 
 /* Projects */
+
 .portfolio-projects {
-  > container {
+  .project-card {
+    width: 21rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    > .project-link {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+
+    .project-image {
+      max-height: 238px;
+      object-position: top;
+    }
+  }
+
+  .project-description {
+    height: 4rem;
   }
 }
 
 /* Borders */
 /* Light green */
-.border-light-green {
+.border-theme-primary {
   --bs-border-opacity: 1;
   border-color: rgba(
-    var(--custom-light-green-rgb),
+    var(--custom-lad-blue-rgb),
     var(--bs-border-opacity)
   ) !important;
 }
 
 /* Text Colors */
-/* Text Color - Light Green */
-.text-light-green {
-  color: #a0ce4e; /* Legacy fallback */
-  color: var(--custom-light-green);
+/* Dodger Blue */
+.text-theme-primary {
+  color: #005a9c; /* Legacy fallback */
+  color: var(--custom-lad-blue);
 }
 
-/* Text Color - Medium Green */
-.text-medium-green {
-  color: #6d9e1a; /* Legacy fallback */
-  color: var(--custom-medium-green);
+/* Dodger Red */
+.text-theme-secondary {
+  color: #ef3e42; /* Legacy fallback */
+  color: var(--custom-lad-red);
 }
 
-/* Text Color - Brown */
-.text-brown {
-  color: #633200; /* Legacy fallback */
-  color: var(--custom-brown);
-}
-
-/* Text Color - Red */
-.text-red {
-  color: #cf2e2e; /* Legacy fallback */
-  color: var(--custom-red);
-}
-
-/* Text Color - Royal Blue */
-.text-royal-blue {
-  color: #4169e1; /* Legacy fallback */
-  color: var(--custom-royal-blue);
+/* Dodger Silver */
+.text-theme-light {
+  color: #a5acaf; /* Legacy fallback */
+  color: var(--custom-lad-silver);
 }
 
 /* Fonts */
+/* Font - Bebas Neue */
+.font-bebas {
+  font-family: sans-serif; /* Legacy fallback */
+  font-family: var(--custom-font-bebas);
+}
+
+/* Font - Dosis */
+.font-dosis {
+  font-family: sans-serif; /* Legacy fallback */
+  font-family: var(--custom-font-dosis);
+}
+.font-dosis-semibold {
+  font-family: sans-serif; /* Legacy fallback */
+  font-family: var(--custom-font-dosis);
+  font-weight: 600;
+}
+.font-dosis-bold {
+  font-family: sans-serif; /* Legacy fallback */
+  font-family: var(--custom-font-dosis);
+  font-weight: 700;
+}
+
+/* Font - Josefin Sans */
+.font-josefin {
+  font-family: sans-serif; /* Legacy fallback */
+  font-family: var(--custom-font-josefin);
+}
+
 /* Font - Mooli */
 .font-mooli {
   font-family: sans-serif; /* Legacy fallback */
@@ -196,7 +225,7 @@ body {
 /* Font - Red Hat Display */
 .font-red-hat-display-light {
   font-family: sans-serif; /* Legacy fallback */
-  font-family: var(--custom-font-red-hat-display);
+  font-family: var(--custom-font-redhat);
   font-weight: 300;
 }
 a, /* Default for a tags */
@@ -207,24 +236,24 @@ h5, /* Default for h5 tags */
 h6, /* Default for h6 tags */
 .font-red-hat-display {
   font-family: sans-serif; /* Legacy fallback */
-  font-family: var(--custom-font-red-hat-display);
+  font-family: var(--custom-font-redhat);
   font-weight: 400;
 }
 h2, /* Default for h2 tags */
 .font-red-hat-display-medium {
   font-family: sans-serif; /* Legacy fallback */
-  font-family: var(--custom-font-red-hat-display);
+  font-family: var(--custom-font-redhat);
   font-weight: 500;
 }
 h1, /* Default for h1 tags */
 .font-red-hat-display-semibold {
   font-family: sans-serif; /* Legacy fallback */
-  font-family: var(--custom-font-red-hat-display);
+  font-family: var(--custom-font-redhat);
   font-weight: 600;
 }
 .nav-link, /* Default for navbar links */
 .font-red-hat-display-bold {
   font-family: sans-serif; /* Legacy fallback */
-  font-family: var(--custom-font-red-hat-display);
+  font-family: var(--custom-font-redhat);
   font-weight: 700;
 }

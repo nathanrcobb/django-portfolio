@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Mooli&family=Red+Hat+Display:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dosis:wght@300;400;500;600;700;800&family=Josefin+Sans:wght@700&family=Mooli&family=Red+Hat+Display:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
 
   <!-- Icons -->
@@ -28,7 +28,7 @@
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
   <!-- Website logo -->
-  <link rel="icon" type="image/png" href="{% static 'portfolio/logo.png' %}">
+  <link rel="icon" type="image/png" href="{% static 'portfolio/logo_sm.png' %}">
 
   <!-- Website Title -->
   <title>{% block title %}{% endblock %} - Portfolio</title>
@@ -38,10 +38,11 @@
 <body class="bg-light">
   <!-- Navbar -->
   <nav class="navbar navbar-expand-md sticky-top py-0">
-    <div class="container pt-2">
+    <div class="container pt-1 pb-1">
       <!-- Header logo -->
-      <a class="navbar-brand" href="{% url 'home' %}">
-        <img src="{% static 'portfolio/header_logo.png' %}" width="204" height="40" alt="Header Logo">
+      <a class="navbar-brand d-flex flex-row align-items-center" href="{% url 'home' %}">
+        <img src="{% static 'portfolio/logo_lg.png' %}" width="40" height="40" alt="Header Logo">
+        <div class="nav-brand-name"><b class="font-dosis fs-3">Nathan Cobb</b></div>
       </a>
 
       <!-- Navbar toggler -->
