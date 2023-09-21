@@ -9,13 +9,14 @@
 
   --custom-font-bebas: "Bebas Neue", sans-serif;
   --custom-font-dosis: "Dosis", sans-serif;
-  --custom-font-josefin: "Josefin Sans", sans-serif;
   --custom-font-mooli: "Mooli", sans-serif;
   --custom-font-redhat: "Red Hat Display", sans-serif;
+
+  --bs-box-shadow-xl: 0 2rem 6rem rgba(0, 0, 0, 0.35);
 }
 
-/* Font sizes */
 body {
+  /* Font sizes */
   h1 {
     font-size: calc(1.375rem + 1.5vw);
   }
@@ -34,6 +35,10 @@ body {
   h6 {
     font-size: 1rem;
   }
+
+  a {
+    text-decoration: none;
+  }
 }
 
 /* Alternate background colors */
@@ -46,13 +51,34 @@ body {
   ) !important;
 }
 
-.bg-theme-light {
-  background-color: #a5acaf; /* Legacy fallback */
-  --bs-bg-opacity: 1;
-  background-color: rgba(
-    var(--custom-lad-silver-rgb),
-    var(--bs-bg-opacity)
-  ) !important;
+/* Transition effects */
+/* Section transitions */
+.section-transition-in {
+  height: 10rem;
+  background: linear-gradient(#0000, #005a9c);
+}
+.section-transition-out {
+  background: linear-gradient(#005a9c, #0000);
+}
+
+/* Link hover effect */
+.hover-primary:hover {
+  color: #005a9c; /* Legacy fallback */
+  color: var(--custom-lad-blue);
+}
+
+/* SVG hover effect */
+.fa-icon:hover {
+  fill: white;
+}
+
+/* Zoom Effect */
+.zoom {
+  transition: all 0.2s; /* Animation */
+}
+.zoom:hover {
+  transform: scale(1.04);
+  box-shadow: var(--bs-box-shadow-xl) !important;
 }
 
 /* Navbar */
@@ -60,56 +86,21 @@ body {
 .navbar.sticky-top {
   background: linear-gradient(#f8f9fa, #f8f9faa7);
 }
-
 .nav-brand-name {
   padding-left: 0.5rem;
 }
 
 /* Right nav item styling */
-#navbarNav {
-  > .navbar-nav {
-    justify-content: space-between;
-    @media (min-width: 768px) {
-      justify-content: end;
-    }
-  }
-}
-
-/* Link hover effect */
-.nav-item {
-  .nav-link:hover {
-    border-radius: 10%;
-    color: #005a9c;
-    color: var(--custom-lad-blue);
+#navbarNav > .navbar-nav {
+  justify-content: space-between;
+  @media (min-width: 768px) {
+    justify-content: end;
   }
 }
 
 /* Portfolio sections */
-/* Headline */
-/* .portfolio-headline {
-} */
-
-/* Greeting */
-.portfolio-greeting {
-  /* Greeting transition */
-  > .greeting {
-    background: linear-gradient(#0000, #005a9c);
-    text-align: center;
-    > h4 {
-      font-weight: 600;
-    }
-  }
-
-  /* Greeting body */
-  .container > h5 {
-    line-height: 1.4;
-    font-weight: 500;
-  }
-}
-
 /* Skills */
 .portfolio-skills {
-  background: linear-gradient(#005a9c, #0000);
   > .container {
     height: 20rem;
     --bs-gutter-x: 0;
@@ -120,9 +111,6 @@ body {
     > .flex-row {
       .container {
         border-right: 1px solid #000000;
-        > span {
-          font-size: 2rem;
-        }
       }
       .container:last-child {
         border-right: none;
@@ -132,19 +120,22 @@ body {
 }
 
 /* Projects */
-
 .portfolio-projects {
   .project-card {
     width: 21rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
 
     > .project-link {
       position: absolute;
       top: 1rem;
       right: 1rem;
+    }
+
+    > .project-github-link {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
     }
 
     .project-image {
@@ -159,7 +150,7 @@ body {
 }
 
 /* Borders */
-/* Light green */
+/* Primary */
 .border-theme-primary {
   --bs-border-opacity: 1;
   border-color: rgba(
@@ -169,19 +160,14 @@ body {
 }
 
 /* Text Colors */
-/* Dodger Blue */
 .text-theme-primary {
   color: #005a9c; /* Legacy fallback */
   color: var(--custom-lad-blue);
 }
-
-/* Dodger Red */
 .text-theme-secondary {
   color: #ef3e42; /* Legacy fallback */
   color: var(--custom-lad-red);
 }
-
-/* Dodger Silver */
 .text-theme-light {
   color: #a5acaf; /* Legacy fallback */
   color: var(--custom-lad-silver);
@@ -210,12 +196,6 @@ body {
   font-weight: 700;
 }
 
-/* Font - Josefin Sans */
-.font-josefin {
-  font-family: sans-serif; /* Legacy fallback */
-  font-family: var(--custom-font-josefin);
-}
-
 /* Font - Mooli */
 .font-mooli {
   font-family: sans-serif; /* Legacy fallback */
@@ -223,11 +203,6 @@ body {
 }
 
 /* Font - Red Hat Display */
-.font-red-hat-display-light {
-  font-family: sans-serif; /* Legacy fallback */
-  font-family: var(--custom-font-redhat);
-  font-weight: 300;
-}
 a, /* Default for a tags */
 p, /* Default for p tags */
 h3, /* Default for h3 tags */

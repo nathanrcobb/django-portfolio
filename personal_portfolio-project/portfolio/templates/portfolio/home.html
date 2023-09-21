@@ -27,15 +27,15 @@
 </div>
 
 <!-- Greeting section -->
-<div class="portfolio-greeting text-white">
-  <div class="greeting text-center pt-5">
-    <h4 class="font-mooli mt-5 mb-0">
+<div class="portfolio-greeting text-white pt-5">
+  <div class="section-transition-in position-relative">
+    <h4 class="w-75 font-mooli text-center position-absolute bottom-0 start-50 translate-middle-x mb-0">
       Hello, I'm Nathan. It's a pleasure to meet you.
     </h4>
   </div>
   <div class="bg-theme-primary">
-    <div class="container">
-      <h5 class="bg-theme-primary text-center my-0 pt-3 pb-5">
+    <div class="container text-center">
+      <h5 class="lh-base my-0 pt-3 pb-5">
         I've spent the past 10 years working with both legacy and modern technologies,
         from COBOL compiler optimization to client-side tracking in React. I thrive in
         fast-paced environments where collaboration is key, but I'm autonomous enough to
@@ -49,7 +49,7 @@
 </div>
 
 <!-- Skills section -->
-<div class="portfolio-skills mt-0 mb-5 pt-3 pb-4">
+<div class="portfolio-skills section-transition-out mt-0 mb-5 pt-3 pb-4">
   <div class="container h-100 w-100 d-flex flex-column bg-light border shadow-lg justify-content-center">
     <div class="container text-center px-4 pt-4 pb-3 w-100">
       <h3 class="font-dosis-bold fs-2">Full Stack</h3>
@@ -57,7 +57,7 @@
     <div class="d-flex flex-row">
       <div class="container h-100 text-center py-4 pl-4">
         <div class="container px-4">
-          <span class="material-symbols-outlined bg-theme-primary text-white rounded-circle mb-3 p-3">
+          <span class="fs-1 material-symbols-outlined bg-theme-primary text-white rounded-circle mb-3 p-3">
             lan
           </span>
           <h4 class="font-dosis-bold fs-3">Backend</h4>
@@ -89,7 +89,7 @@
       </div>
       <div class="container h-100 text-center py-4 pr-4">
         <div class="container px-4">
-          <span class="material-symbols-outlined bg-theme-primary text-white rounded-circle mb-3 p-3">
+          <span class="fs-1 material-symbols-outlined bg-theme-primary text-white rounded-circle mb-3 p-3">
             devices
           </span>
           <h4 class="font-dosis-bold fs-3">Frontend</h4>
@@ -129,23 +129,29 @@
 
 <!-- Projects section -->
 <div class="portfolio-projects bg-light py-3">
-  <div class="container-fluid d-flex flex-column align-items-center">
+  <div class="container-fluid d-flex flex-column align-items-center mb-0">
     <h2 class="font-dosis-bold fs-1">Things I've built</h2>
-    <hr class="mt-0" width="30%" size="3px">
-    <br>
+    <hr class="my-0" width="30%" size="3px">
 
-    <div class="w-100 px-2 d-flex flex-row justify-content-between">
+    <div class="row w-100 px-2 d-flex flex-row flex-wrap justify-content-center">
       {% for project in projects %}
       <div
-        class="container project-card position-relative d-flex flex-column text-center align-items-center border bg-light rounded-3 shadow-lg">
+        class="col-md-2 mx-4 my-4 project-card zoom position-relative d-flex flex-column text-center align-items-center border bg-light rounded-3 shadow-lg">
         <h2 class="font-dosis-semibold fs-2 pb-3">{{ project.title }}</h2>
         <img class="project-image rounded-3 object-fit-cover object-position-top mb-3" src="{{ project.image.url }}"
           alt="{{project.title}} image" width="300">
-        <h6 class="project-description">{{ project.description }}</h6>
+        <h6 class="project-description px-2">{{ project.description }}</h6>
+        {% if project.github_url %}
+        <a class="project-github-link" href="{{ project.github_url }}" target="_blank">
+          <span class="material-symbols-outlined border btn text-theme-light shadow-md mb-3 p-2">
+            code
+          </span>
+        </a>
+        {% endif %}
         {% if project.url %}
-        <a class="project-link" href="{{ project.url }}">
-          <span class="material-symbols-outlined border rounded-3 shadow-md mb-3 p-2">
-            link
+        <a class="project-link" href="{{ project.url }}" target="_blank">
+          <span class="material-symbols-outlined border btn text-theme-light shadow-md mb-3 p-2">
+            open_in_new
           </span>
         </a>
         {% endif %}

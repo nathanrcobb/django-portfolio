@@ -6,6 +6,7 @@ class Project(models.Model):
   description = models.CharField(max_length=250)
   image = models.ImageField(upload_to='images/projects/')
   url = models.URLField(blank=True)
+  github_url = models.URLField(blank=True)
   position = models.IntegerField(blank=True)
 
   def __str__(self):
