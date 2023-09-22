@@ -133,6 +133,7 @@
     <hr class="my-0" width="30%" size="3px">
 
     <div class="row w-100 px-2 d-flex flex-row flex-wrap justify-content-center">
+      {% if projects.count > 0 %}
       {% for project in projects %}
       <div
         class="col-md-2 mx-4 my-4 project-card zoom position-relative d-flex flex-column text-center align-items-center border bg-light rounded-3 shadow-lg">
@@ -156,6 +157,14 @@
         {% endif %}
       </div>
       {% endfor %}
+      {% else %}
+      <div class="text-center">
+        <h1>😬</h1>
+        <h3 class="font-dosis-semibold">
+          No projects found
+        </h3>
+      </div>
+      {% endif %}
     </div>
   </div>
 </div>
