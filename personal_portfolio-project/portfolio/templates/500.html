@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Not Found{% endblock %}
+
+{% block content %}
+<div class="container-fluid d-flex flex-column align-items-center pt-5 mb-0">
+  <h1>💀</h1>
+  <h1 class="font-dosis-bold">500: Internal error</h1>
+  <h2>Exception:</h2>
+  <h5>{{exception}}</h5>
+</div>
+{% endblock %}

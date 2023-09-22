@@ -149,6 +149,15 @@ body {
   }
 }
 
+main {
+  flex: 1 0 auto;
+}
+
+/* Footer */
+/* footer {
+  margin-top: auto;
+} */
+
 /* Borders */
 /* Primary */
 .border-theme-primary {

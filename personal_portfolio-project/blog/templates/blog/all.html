@@ -5,15 +5,27 @@
 {% block nav_blogs %}active{% endblock %}
 
 {% block content %}
+<div class="container-fluid d-flex flex-column align-items-center pt-5 mb-0">
+  <h1 class="font-dosis-bold">My Blogs ({{ blogs.count }})</h1>
+  <br>
 
-<h1>My Blogs ({{ blogs.count }})</h1>
-<br>
-
-{% for blog in blogs %}
-<a href="{% url 'blog:detail' blog.id %}">
-  <h3>{{ blog.title }}</h3>
-</a>
-<h5>{{ blog.date|date:'m-d-Y' }}</h5>
-<p>{{ blog.description|striptags|truncatechars:100 }}</p>
-{% endfor %}
+  <div class="my-5">
+    {% if blogs.count > 0 %}
+    {% for blog in blogs %}
+    <a href="{% url 'blog:detail' blog.id %}">
+      <h3>{{ blog.title }}</h3>
+    </a>
+    <h5>{{ blog.date|date:'m-d-Y' }}</h5>
+    <p>{{ blog.description|striptags|truncatechars:100 }}</p>
+    {% endfor %}
+    {% else %}
+    <div class="text-center">
+      <h1>😬</h1>
+      <h3 class="font-dosis-semibold">
+        No blogs found
+      </h3>
+    </div>
+    {% endif %}
+  </div>
+</div>
 {% endblock %}
