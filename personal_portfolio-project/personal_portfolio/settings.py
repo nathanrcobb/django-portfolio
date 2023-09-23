@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-q=sx(+9mapam^jkb-3p-k85zc$5gttq^3ank3+lnl2tqbw9@8g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'nathanrcobb.pythonanywhere.com']
+ALLOWED_HOSTS = ['nathanrcobb.pythonanywhere.com']
 
 
 # Application definition
@@ -127,3 +127,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+try:
+  from .local_settings import *
+except ImportError:
+  print('Local settings not found; this must be production.')
