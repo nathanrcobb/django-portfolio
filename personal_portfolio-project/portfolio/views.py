@@ -21,7 +21,7 @@ def handler500(request, exception=None):
 
 
 def home(request):
-  projects = Project.objects.all()
+  projects = Project.objects.all().order_by('position')
 
   return render(request, 'portfolio/home.html', {
     'projects': projects
