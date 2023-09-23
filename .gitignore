@@ -159,6 +159,8 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-# Images
+# Custom
 personal_portfolio-project/media/images/projects/
 personal_portfolio-project/portfolio/static/portfolio/public_resume.pdf
+personal_portfolio-project/static/
+personal_portfolio-project/media/
