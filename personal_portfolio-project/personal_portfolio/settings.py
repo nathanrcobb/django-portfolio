@@ -10,7 +10,15 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
+from dotenv import load_dotenv
 from pathlib import Path
+
+# Load environment variables from .env file
+load_dotenv()
+
+ENV = os.getenv('ENV')
+production = True if ENV == 'production' else False
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +28,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-q=sx(+9mapam^jkb-3p-k85zc$5gttq^3ank3+lnl2tqbw9@8g'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = False if production else True
 
-ALLOWED_HOSTS = ['nathanrcobb.pythonanywhere.com']
+ALLOWED_HOSTS = ['nathanrcobb.pythonanywhere.com'] if production else []
 
 
 # Application definition
@@ -75,9 +83,23 @@ WSGI_APPLICATION = 'personal_portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+DATABASE_ENGINE = os.getenv('DATABASE_ENGINE')
+DATABASE_NAME = os.getenv('DATABASE_NAME')
+DATABASE_USERNAME = os.getenv('DATABASE_USERNAME')
+DATABASE_PASSWORD = os.getenv('DATABASE_PASSWORD')
+DATABASE_URL = os.getenv('DATABASE_URL')
+DATABASE_PORT = os.getenv('DATABASE_PORT')
+
 DATABASES = {
+    "default": {
+        "ENGINE": DATABASE_ENGINE,
+        "OPTIONS": {
+          "read_default_file": BASE_DIR / 'db.conf'
+        }
+    }
+} if production else {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': DATABASE_ENGINE,
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
@@ -127,8 +149,3 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-try:
-  from .local_settings import *
-except ImportError:
-  print('Local settings not found; this must be production.')
