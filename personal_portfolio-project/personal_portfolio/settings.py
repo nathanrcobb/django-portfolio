@@ -89,7 +89,7 @@ DATABASES = {
     "default": {
         "ENGINE": DATABASE_ENGINE,
         "OPTIONS": {
-          "read_default_file": BASE_DIR / 'db.conf'
+          "read_default_file": str(BASE_DIR / 'db.conf')
         }
     }
 } if production else {
