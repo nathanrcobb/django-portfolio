@@ -33,7 +33,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False if production else True
 
-ALLOWED_HOSTS = ['nathanrcobb.pythonanywhere.com'] if production else []
+ALLOWED_HOSTS = ['nathanrcobb.pythonanywhere.com',
+                 'www.nathanrcobb.com'] if production else []
 
 
 # Application definition
