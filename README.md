@@ -1,4 +1,4 @@
-# [Django Portfolio](https://www.nathanrcobb.com) · ![License](https://badgen.net/badge/License/MIT/blue) ![Django](https://badgen.net/badge/Django/v4.2.2/20AA76) ![Bootstrap](https://badgen.net/badge/Bootstrap/v5.3.2/5A23C9)
+# [Django Portfolio](https://www.nathanrcobb.com) · ![License](https://badgen.net/badge/License/MIT/cyan) ![Django](https://badgen.net/badge/Django/v4.2.2/20AA76) ![Bootstrap](https://badgen.net/badge/Bootstrap/v5.3.2/5A23C9)
 
 ![Django Portfolio Image](assets/images/cover.png)
 
