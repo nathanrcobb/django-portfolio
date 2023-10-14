@@ -1,159 +1,169 @@
 /* CSS Variables */
 :root {
-  --custom-lad-blue: #005a9c;
-  --custom-lad-blue-rgb: 0, 90, 156;
-  --custom-lad-red: #ef3e42;
-  --custom-lad-red-rgb: 239, 62, 66;
-  --custom-lad-silver: #a5acaf;
-  --custom-lad-silver-rgb: 191, 192, 191;
+    --custom-lad-blue: #005a9c;
+    --custom-lad-blue-rgb: 0, 90, 156;
+    --custom-lad-red: #ef3e42;
+    --custom-lad-red-rgb: 239, 62, 66;
+    --custom-lad-silver: #a5acaf;
+    --custom-lad-silver-rgb: 191, 192, 191;
 
-  --custom-font-bebas: "Bebas Neue", sans-serif;
-  --custom-font-dosis: "Dosis", sans-serif;
-  --custom-font-mooli: "Mooli", sans-serif;
-  --custom-font-redhat: "Red Hat Display", sans-serif;
+    --custom-font-bebas: "Bebas Neue", sans-serif;
+    --custom-font-dosis: "Dosis", sans-serif;
+    --custom-font-mooli: "Mooli", sans-serif;
+    --custom-font-redhat: "Red Hat Display", sans-serif;
 
-  --bs-box-shadow-xl: 0 2rem 6rem rgba(0, 0, 0, 0.35);
+    --bs-box-shadow-xl: 0 2rem 6rem rgba(0, 0, 0, 0.35);
 }
 
 body {
-  /* Font sizes */
-  h1 {
-    font-size: calc(1.375rem + 1.5vw);
-  }
-  h2 {
-    font-size: calc(1.325rem + 0.9vw);
-  }
-  h3 {
-    font-size: calc(1.3rem + 0.6vw);
-  }
-  h4 {
-    font-size: calc(1.275rem + 0.3vw);
-  }
-  h5 {
-    font-size: 1.25rem;
-  }
-  h6 {
-    font-size: 1rem;
-  }
+    /* Font sizes */
+    h1 {
+        font-size: calc(1.375rem + 1.5vw);
+    }
+    h2 {
+        font-size: calc(1.325rem + 0.9vw);
+    }
+    h3 {
+        font-size: calc(1.3rem + 0.6vw);
+    }
+    h4 {
+        font-size: calc(1.275rem + 0.3vw);
+    }
+    h5 {
+        font-size: 1.25rem;
+    }
+    h6 {
+        font-size: 1rem;
+    }
 
-  a {
-    text-decoration: none;
-  }
+    a {
+        text-decoration: none;
+    }
 }
 
 /* Alternate background colors */
 .bg-theme-primary {
-  background-color: #005a9c; /* Legacy fallback */
-  --bs-bg-opacity: 1;
-  background-color: rgba(
-    var(--custom-lad-blue-rgb),
-    var(--bs-bg-opacity)
-  ) !important;
+    background-color: #005a9c; /* Legacy fallback */
+    --bs-bg-opacity: 1;
+    background-color: rgba(
+        var(--custom-lad-blue-rgb),
+        var(--bs-bg-opacity)
+    ) !important;
 }
 
 /* Transition effects */
 /* Section transitions */
 .section-transition-in {
-  height: 10rem;
-  background: linear-gradient(#0000, #005a9c);
+    height: 10rem;
+    margin-bottom: -0.25px;
+    background: linear-gradient(#0000, #005a9c);
 }
 .section-transition-out {
-  background: linear-gradient(#005a9c, #0000);
+    background: linear-gradient(#005a9c, #0000);
 }
 
 /* Link hover effect */
 .hover-primary:hover {
-  color: #005a9c; /* Legacy fallback */
-  color: var(--custom-lad-blue);
+    color: #005a9c; /* Legacy fallback */
+    color: var(--custom-lad-blue);
 }
 
 /* SVG hover effect */
 .fa-icon:hover {
-  fill: white;
+    fill: white;
 }
 
 /* Zoom Effect */
 .zoom {
-  transition: all 0.2s; /* Animation */
+    transition: all 0.2s; /* Animation */
 }
 .zoom:hover {
-  transform: scale(1.04);
-  box-shadow: var(--bs-box-shadow-xl) !important;
+    transform: scale(1.04);
+    box-shadow: var(--bs-box-shadow-xl) !important;
 }
 
 /* Navbar */
 /* Main styling */
 .navbar.sticky-top {
-  background: linear-gradient(#f8f9fa, #f8f9faa7);
+    background: linear-gradient(#f8f9fa, #f8f9faa7);
 }
 .nav-brand-name {
-  padding-left: 0.5rem;
+    padding-left: 0.5rem;
 }
 
 /* Right nav item styling */
 #navbarNav > .navbar-nav {
-  justify-content: space-between;
-  @media (min-width: 768px) {
-    justify-content: end;
-  }
+    justify-content: space-between;
+    @media (min-width: 768px) {
+        justify-content: end;
+    }
 }
 
 /* Portfolio sections */
 /* Skills */
 .portfolio-skills {
-  > .container {
-    height: 20rem;
-    --bs-gutter-x: 0;
-    border-radius: 1rem;
     > .container {
-      border-bottom: 1px solid #000000;
+        height: 20rem;
+        --bs-gutter-x: 0;
+        border-radius: 1rem;
+        > .container {
+            border-bottom: 1px solid #000000;
+        }
+        > .flex-row {
+            .container {
+                border-right: 1px solid #000000;
+            }
+            .container:last-child {
+                border-right: none;
+            }
+        }
     }
-    > .flex-row {
-      .container {
-        border-right: 1px solid #000000;
-      }
-      .container:last-child {
-        border-right: none;
-      }
-    }
-  }
 }
 
 /* Projects */
 .portfolio-projects {
-  .project-card {
-    width: 30rem;
-    height: 34rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    .project-card {
+        width: 30rem;
+        height: 24rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
 
-    > .project-link {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
+        @media (min-width: 538px) {
+            height: 34rem;
+        }
+
+        > .project-link {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        > .project-github-link {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+
+        .project-image {
+            height: 200px;
+            width: 300px;
+            object-position: top;
+            object-fit: cover;
+
+            @media (min-width: 538px) {
+                height: 280px;
+                width: 400px;
+            }
+        }
     }
 
-    > .project-github-link {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
+    .project-description {
+        height: 4rem;
     }
-
-    .project-image {
-      height: 280px;
-      width: 400px;
-      object-position: top;
-      object-fit: cover;
-    }
-  }
-
-  .project-description {
-    height: 4rem;
-  }
 }
 
 main {
-  flex: 1 0 auto;
+    flex: 1 0 auto;
 }
 
 /* Footer */
@@ -164,54 +174,54 @@ main {
 /* Borders */
 /* Primary */
 .border-theme-primary {
-  --bs-border-opacity: 1;
-  border-color: rgba(
-    var(--custom-lad-blue-rgb),
-    var(--bs-border-opacity)
-  ) !important;
+    --bs-border-opacity: 1;
+    border-color: rgba(
+        var(--custom-lad-blue-rgb),
+        var(--bs-border-opacity)
+    ) !important;
 }
 
 /* Text Colors */
 .text-theme-primary {
-  color: #005a9c; /* Legacy fallback */
-  color: var(--custom-lad-blue);
+    color: #005a9c; /* Legacy fallback */
+    color: var(--custom-lad-blue);
 }
 .text-theme-secondary {
-  color: #ef3e42; /* Legacy fallback */
-  color: var(--custom-lad-red);
+    color: #ef3e42; /* Legacy fallback */
+    color: var(--custom-lad-red);
 }
 .text-theme-light {
-  color: #a5acaf; /* Legacy fallback */
-  color: var(--custom-lad-silver);
+    color: #a5acaf; /* Legacy fallback */
+    color: var(--custom-lad-silver);
 }
 
 /* Fonts */
 /* Font - Bebas Neue */
 .font-bebas {
-  font-family: sans-serif; /* Legacy fallback */
-  font-family: var(--custom-font-bebas);
+    font-family: sans-serif; /* Legacy fallback */
+    font-family: var(--custom-font-bebas);
 }
 
 /* Font - Dosis */
 .font-dosis {
-  font-family: sans-serif; /* Legacy fallback */
-  font-family: var(--custom-font-dosis);
+    font-family: sans-serif; /* Legacy fallback */
+    font-family: var(--custom-font-dosis);
 }
 .font-dosis-semibold {
-  font-family: sans-serif; /* Legacy fallback */
-  font-family: var(--custom-font-dosis);
-  font-weight: 600;
+    font-family: sans-serif; /* Legacy fallback */
+    font-family: var(--custom-font-dosis);
+    font-weight: 600;
 }
 .font-dosis-bold {
-  font-family: sans-serif; /* Legacy fallback */
-  font-family: var(--custom-font-dosis);
-  font-weight: 700;
+    font-family: sans-serif; /* Legacy fallback */
+    font-family: var(--custom-font-dosis);
+    font-weight: 700;
 }
 
 /* Font - Mooli */
 .font-mooli {
-  font-family: sans-serif; /* Legacy fallback */
-  font-family: var(--custom-font-mooli);
+    font-family: sans-serif; /* Legacy fallback */
+    font-family: var(--custom-font-mooli);
 }
 
 /* Font - Red Hat Display */
@@ -222,25 +232,25 @@ h4, /* Default for h4 tags */
 h5, /* Default for h5 tags */
 h6, /* Default for h6 tags */
 .font-red-hat-display {
-  font-family: sans-serif; /* Legacy fallback */
-  font-family: var(--custom-font-redhat);
-  font-weight: 400;
+    font-family: sans-serif; /* Legacy fallback */
+    font-family: var(--custom-font-redhat);
+    font-weight: 400;
 }
 h2, /* Default for h2 tags */
 .font-red-hat-display-medium {
-  font-family: sans-serif; /* Legacy fallback */
-  font-family: var(--custom-font-redhat);
-  font-weight: 500;
+    font-family: sans-serif; /* Legacy fallback */
+    font-family: var(--custom-font-redhat);
+    font-weight: 500;
 }
 h1, /* Default for h1 tags */
 .font-red-hat-display-semibold {
-  font-family: sans-serif; /* Legacy fallback */
-  font-family: var(--custom-font-redhat);
-  font-weight: 600;
+    font-family: sans-serif; /* Legacy fallback */
+    font-family: var(--custom-font-redhat);
+    font-weight: 600;
 }
 .nav-link, /* Default for navbar links */
 .font-red-hat-display-bold {
-  font-family: sans-serif; /* Legacy fallback */
-  font-family: var(--custom-font-redhat);
-  font-weight: 700;
+    font-family: sans-serif; /* Legacy fallback */
+    font-family: var(--custom-font-redhat);
+    font-weight: 700;
 }
